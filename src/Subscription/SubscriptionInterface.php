@@ -2,6 +2,17 @@
 
 namespace Paytic\CommonObjects\Subscription;
 
-interface SubscriptionInterface
+use Paytic\CommonObjects\Subscriptions\Billing\HasBillingPeriodInterface;
+
+interface SubscriptionInterface extends
+    HasBillingPeriodInterface
 {
+
+    public function canBeActivated(): bool;
+
+    public function canBeCanceled(): bool;
+
+    public function canBeDeactivated(): bool;
+
+    public function getStatus(): string;
 }
