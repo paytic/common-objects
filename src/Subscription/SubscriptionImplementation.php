@@ -10,6 +10,7 @@ trait SubscriptionImplementation
 {
     use HasSubscriptionStatus;
     use HasBillingPeriod;
+    use Behaviours\Chargeable;
 
     public function canBeActivated(): bool
     {

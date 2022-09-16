@@ -14,5 +14,7 @@ interface SubscriptionInterface extends
 
     public function canBeDeactivated(): bool;
 
+    public function canBeCharged(): bool;
+
     public function getStatus(): string;
 }
