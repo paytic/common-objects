@@ -1,0 +1,36 @@
+{
+  "name": "paytic/common-objects",
+  "type": "library",
+  "license": "MIT",
+  "description": "Common value objects used in payments",
+  "keywords": [],
+  "homepage": "https://github.com/paytic/common-objects",
+  "authors": [
+    {
+      "name": "Gabriel Solomon",
+      "email": "hello@gabrielsolomon.ro"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Paytic\\CommonObjects\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Paytic\\CommonObjects\\Tests\\": "tests/src"
+    }
+  },
+  "require": {
+    "php": "^7.2|^8.0"
+  },
+  "require-dev": {
+    "bytic/phpqatools": "^1.0"
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "config": {
+    "allow-plugins": {
+    }
+  }
+}
