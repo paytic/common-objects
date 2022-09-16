@@ -2,6 +2,7 @@
 
 namespace Paytic\CommonObjects\Subscription\Behaviours;
 
+use Paytic\CommonObjects\Subscription\Exception\SubscriptionNotChargeable;
 use Paytic\CommonObjects\Subscription\Status\SubscriptionStatusInterface;
 
 trait Chargeable
@@ -15,5 +16,12 @@ trait Chargeable
         }
 
         return true;
+    }
+
+    public function guardIsChargeable(): void
+    {
+        if (false === $this->canBeCharged()) {
+            throw new SubscriptionNotChargeable();
+        }
     }
 }
