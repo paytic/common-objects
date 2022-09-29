@@ -1,6 +1,6 @@
 <?php
 
-namespace Paytic\CommonObjects\Subscriptions\Billing;
+namespace Paytic\CommonObjects\Subscription\Billing;
 
 interface HasBillingPeriodInterface
 {

@@ -2,7 +2,7 @@
 
 namespace Paytic\CommonObjects\Subscription;
 
-use Paytic\CommonObjects\Subscriptions\Billing\HasBillingPeriodInterface;
+use Paytic\CommonObjects\Subscription\Billing\HasBillingPeriodInterface;
 
 interface SubscriptionInterface extends
     HasBillingPeriodInterface
@@ -16,5 +16,5 @@ interface SubscriptionInterface extends
 
     public function canBeCharged(): bool;
 
-    public function getStatus(): string;
+    public function getStatus(): ?string;
 }

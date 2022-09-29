@@ -18,6 +18,7 @@
   },
   "autoload-dev": {
     "psr-4": {
+      "Paytic\\CommonObjects\\Tests\\Fixtures\\": "tests/fixtures",
       "Paytic\\CommonObjects\\Tests\\": "tests/src"
     }
   },
@@ -31,6 +32,10 @@
   "minimum-stability": "dev",
   "config": {
     "allow-plugins": {
+      "phpstan/extension-installer": true,
+      "ergebnis/composer-normalize": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "bytic/phpqatools": true
     }
   }
 }

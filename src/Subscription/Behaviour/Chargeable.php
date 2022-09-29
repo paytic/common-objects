@@ -1,6 +1,6 @@
 <?php
 
-namespace Paytic\CommonObjects\Subscription\Behaviours;
+namespace Paytic\CommonObjects\Subscription\Behaviour;
 
 use Paytic\CommonObjects\Subscription\Exception\SubscriptionNotChargeable;
 use Paytic\CommonObjects\Subscription\Status\SubscriptionStatusInterface;

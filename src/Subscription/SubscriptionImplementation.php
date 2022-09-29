@@ -4,13 +4,13 @@ namespace Paytic\CommonObjects\Subscription;
 
 use Paytic\CommonObjects\Subscription\Status\HasSubscriptionStatus;
 use Paytic\CommonObjects\Subscription\Status\SubscriptionStatusInterface;
-use Paytic\CommonObjects\Subscriptions\Builder\HasBillingPeriod;
+use Paytic\CommonObjects\Subscription\Billing\HasBillingPeriod;
 
 trait SubscriptionImplementation
 {
     use HasSubscriptionStatus;
     use HasBillingPeriod;
-    use Behaviours\Chargeable;
+    use Behaviour\Chargeable;
 
     public function canBeActivated(): bool
     {

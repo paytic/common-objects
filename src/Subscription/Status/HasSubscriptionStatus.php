@@ -4,7 +4,7 @@ namespace Paytic\CommonObjects\Subscription\Status;
 
 trait HasSubscriptionStatus
 {
-    public ?string $status;
+    public ?string $status = null;
 
 
     public function getStatus(): ?string

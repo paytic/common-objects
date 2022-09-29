@@ -1,10 +1,10 @@
 <?php
 
-namespace Paytic\CommonObjects\Subscriptions\Billing;
+namespace Paytic\CommonObjects\Subscription\Billing;
 
 /**
  * Class BillingPeriod
- * @package Paytic\CommonObjects\Subscriptions\Billing
+ * @package Paytic\CommonObjects\Subscription\Billing
  */
 class BillingPeriod
 {
