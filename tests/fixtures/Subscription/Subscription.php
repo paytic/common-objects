@@ -8,9 +8,4 @@ use Paytic\CommonObjects\Subscription\SubscriptionInterface;
 class Subscription implements SubscriptionInterface
 {
     use SubscriptionImplementation;
-
-    public function getBillingPeriod(): string
-    {
-        return '';
-    }
 }

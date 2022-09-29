@@ -15,6 +15,22 @@ trait HasBillingPeriod
     public string $billing_period;
 
     /**
+     * @return int
+     */
+    public function getBillingInterval(): int
+    {
+        return $this->billing_interval;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBillingPeriod(): string
+    {
+        return $this->billing_period;
+    }
+
+    /**
      * @param int $every
      * @return self
      */
