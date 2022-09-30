@@ -35,6 +35,7 @@ interface SubscriptionStatusInterface
         self::ACTIVE,
         self::CANCELED,
         self::DEACTIVATED,
+        self::PAUSED,
     ];
      const STATUSES_CHARGEABLE = [
         self::PENDING,
