@@ -2,7 +2,7 @@
 
 namespace Paytic\CommonObjects\Subscription\Status;
 
-class SubscriptionStatus
+class SubscriptionStatus implements SubscriptionStatusInterface
 {
 
 }

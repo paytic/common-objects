@@ -7,28 +7,28 @@ interface SubscriptionStatusInterface
     /**
      * The subscription is pending to start in the future.
      */
-    public const PENDING = 'PENDING';
+    public const PENDING = 'pending';
 
     /**
      * The subscription is active.
      */
-    public const ACTIVE = 'ACTIVE';
+    public const ACTIVE = 'active';
 
     /**
      * The subscription is canceled.
      */
-    public const CANCELED = 'CANCELED';
+    public const CANCELED = 'canceled';
 
     /**
      * The subscription is deactivated.
      * This is automaticly when the subscription cannot be executed for varius reasons
      */
-    public const DEACTIVATED = 'DEACTIVATED';
+    public const DEACTIVATED = 'deactivated';
 
     /**
      * The subscription is paused.
      */
-    public const PAUSED = 'PAUSED';
+    public const PAUSED = 'paused';
 
     const STATUSES = [
         self::PENDING,
@@ -36,5 +36,8 @@ interface SubscriptionStatusInterface
         self::CANCELED,
         self::DEACTIVATED,
     ];
-
+     const STATUSES_CHARGEABLE = [
+        self::PENDING,
+        self::ACTIVE,
+    ];
 }

@@ -15,8 +15,7 @@ trait Chargeable
     public function canBeCharged(): bool
     {
         if (!in_array(
-            $this->getStatus(),
-            [SubscriptionStatusInterface::ACTIVE, SubscriptionStatusInterface::PENDING])) {
+            $this->getStatus(), SubscriptionStatusInterface::STATUSES_CHARGEABLE)) {
             return false;
         }
 

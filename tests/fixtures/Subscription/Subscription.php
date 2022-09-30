@@ -1,6 +1,6 @@
 <?php
 
-namespace Paytic\CommonObjects\Tests\fixtures\Subscription;
+namespace Paytic\CommonObjects\Tests\Fixtures\Subscription;
 
 use Paytic\CommonObjects\Subscription\SubscriptionImplementation;
 use Paytic\CommonObjects\Subscription\SubscriptionInterface;
