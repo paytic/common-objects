@@ -14,6 +14,11 @@ trait HasBillingPeriod
 
     public string $billing_period;
 
+    public function setBillingInterval(int|string $billing_interval): void
+    {
+        $this->billing_interval = (int)$billing_interval;
+    }
+
     /**
      * @return int
      */
