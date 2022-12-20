@@ -1,13 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Paytic\CommonObjects\Subscription;
 
 use Paytic\CommonObjects\Subscription\Billing\HasBillingPeriodInterface;
 
-interface SubscriptionInterface
-    extends HasBillingPeriodInterface
+interface SubscriptionInterface extends HasBillingPeriodInterface
 {
-
     public function canBeActivated(): bool;
 
     public function canBeCanceled(): bool;

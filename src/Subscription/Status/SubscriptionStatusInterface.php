@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Paytic\CommonObjects\Subscription\Status;
 
 interface SubscriptionStatusInterface
@@ -21,7 +23,7 @@ interface SubscriptionStatusInterface
 
     /**
      * The subscription is deactivated.
-     * This is automaticly when the subscription cannot be executed for varius reasons
+     * This is automaticly when the subscription cannot be executed for varius reasons.
      */
     public const DEACTIVATED = 'deactivated';
 
@@ -30,15 +32,15 @@ interface SubscriptionStatusInterface
      */
     public const PAUSED = 'paused';
 
-    const STATUSES = [
+    public const STATUSES = [
         self::PENDING,
         self::ACTIVE,
         self::CANCELED,
         self::DEACTIVATED,
         self::PAUSED,
     ];
-     const STATUSES_CHARGEABLE = [
-        self::PENDING,
-        self::ACTIVE,
+    public const STATUSES_CHARGEABLE = [
+       self::PENDING,
+       self::ACTIVE,
     ];
 }

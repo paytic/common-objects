@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Paytic\CommonObjects\Tests\Subscription;
 
 use Paytic\CommonObjects\Subscription\Status\SubscriptionStatusInterface;
@@ -8,7 +10,7 @@ use Paytic\CommonObjects\Tests\Fixtures\Subscription\Subscription;
 
 class SubscriptionTest extends AbstractTestCase
 {
-    public function test_canBeActivated()
+    public function testCanBeActivated()
     {
         $subscription = new Subscription();
 

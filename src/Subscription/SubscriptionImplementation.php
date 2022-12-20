@@ -1,25 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Paytic\CommonObjects\Subscription;
 
+use Paytic\CommonObjects\Subscription\Billing\HasBillingPeriod;
 use Paytic\CommonObjects\Subscription\Status\HasSubscriptionStatus;
 use Paytic\CommonObjects\Subscription\Status\SubscriptionStatusInterface;
-use Paytic\CommonObjects\Subscription\Billing\HasBillingPeriod;
 
 trait SubscriptionImplementation
 {
-    use HasSubscriptionStatus;
-    use HasBillingPeriod;
     use Behaviour\Chargeable;
+    use HasBillingPeriod;
+    use HasSubscriptionStatus;
 
     public function canBeActivated(): bool
     {
-        return $this->getStatus() === SubscriptionStatusInterface::PENDING;
+        return SubscriptionStatusInterface::PENDING === $this->getStatus();
     }
 
     public function canBeCanceled(): bool
     {
-        return in_array($this->getStatus(), [
+        return \in_array($this->getStatus(), [
             SubscriptionStatusInterface::ACTIVE,
             SubscriptionStatusInterface::DEACTIVATED,
         ]);
@@ -27,7 +29,6 @@ trait SubscriptionImplementation
 
     public function canBeDeactivated(): bool
     {
-        return $this->getStatus() === SubscriptionStatusInterface::ACTIVE;
+        return SubscriptionStatusInterface::ACTIVE === $this->getStatus();
     }
-
 }

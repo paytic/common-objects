@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Paytic\CommonObjects\Subscription\Behaviour;
 
 use Paytic\CommonObjects\Subscription\Exception\SubscriptionNotChargeable;
@@ -14,7 +16,7 @@ trait Chargeable
 
     public function canBeCharged(): bool
     {
-        if (!in_array(
+        if (!\in_array(
             $this->getStatus(), SubscriptionStatusInterface::STATUSES_CHARGEABLE)) {
             return false;
         }
@@ -34,9 +36,6 @@ trait Chargeable
         return $this->getChargeAttempts() >= $this->getChargedAttemptLimit();
     }
 
-    /**
-     * @return int
-     */
     public function getChargeAttempts(): int
     {
         return $this->charge_attempts;

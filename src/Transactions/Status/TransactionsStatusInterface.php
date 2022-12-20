@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Paytic\CommonObjects\Transactions\Status;
 
 /**
@@ -34,7 +36,7 @@ interface TransactionsStatusInterface
 
     public const SUCCEEDED = 'succeeded';
 
-    const STATUSES = [
+    public const STATUSES = [
         self::PENDING,
         self::FAILED,
         self::REFUNDED,
@@ -42,5 +44,4 @@ interface TransactionsStatusInterface
         self::CANCELED,
         self::SUCCEEDED,
     ];
-
 }

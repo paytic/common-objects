@@ -1,12 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Paytic\CommonObjects\Subscription\Billing;
 
-use Exception;
-
 /**
- * Trait ManageBillingCycle
- * @package Paytic\Payments\Subscription\Billing
+ * Trait ManageBillingCycle.
  */
 trait HasBillingPeriod
 {
@@ -16,20 +15,14 @@ trait HasBillingPeriod
 
     public function setBillingInterval(int|string $billing_interval): void
     {
-        $this->billing_interval = (int)$billing_interval;
+        $this->billing_interval = (int) $billing_interval;
     }
 
-    /**
-     * @return int
-     */
     public function getBillingInterval(): int
     {
         return $this->billing_interval;
     }
 
-    /**
-     * @return string
-     */
     public function getBillingPeriod(): string
     {
         return $this->billing_period;
@@ -37,6 +30,7 @@ trait HasBillingPeriod
 
     /**
      * @param int $every
+     *
      * @return self
      */
     public function billEveryDay($every = 1)
@@ -46,6 +40,7 @@ trait HasBillingPeriod
 
     /**
      * @param int $every
+     *
      * @return self
      */
     public function billEveryWeek($every = 1)
@@ -55,6 +50,7 @@ trait HasBillingPeriod
 
     /**
      * @param int $every
+     *
      * @return self
      */
     public function billEveryMonth($every = 1)
@@ -64,26 +60,26 @@ trait HasBillingPeriod
 
     /**
      * @param int $every
+     *
      * @return self
      */
     public function yearly($every = 1)
     {
-        /** @noinspection PhpUnhandledExceptionInspection */
+        /* @noinspection PhpUnhandledExceptionInspection */
         return $this->billEvery($every, BillingPeriod::YEARLY);
     }
 
     /**
-     * @param int $interval
-     * @param string $period
      * @return $this
      */
     public function billEvery(int $interval, string $period)
     {
-        if (!in_array($period, BillingPeriod::PERIOD)) {
-            throw new Exception("Invalid period [{$interval}] in " . get_class($this));
+        if (!\in_array($period, BillingPeriod::PERIOD)) {
+            throw new \Exception("Invalid period [{$interval}] in " . static::class);
         }
         $this->billing_interval = $interval;
         $this->billing_period = $period;
+
         return $this;
     }
 }
