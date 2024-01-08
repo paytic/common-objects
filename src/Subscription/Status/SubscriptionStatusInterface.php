@@ -28,6 +28,19 @@ interface SubscriptionStatusInterface
     public const DEACTIVATED = 'deactivated';
 
     /**
+     * A failed recurring payment will be temporarily listed as ‘past due.’
+     * The customer’s credit card is automatically retried up to three times based on scheduled preferences.
+     * The payment status will stay listed as ‘past due’ until a successful payment is made.
+     */
+    public const PASTDUE = 'pastdue';
+
+    /**
+     * The subscription is unpaid.
+     * If all payment attempts fail, the recurring payment will be marked as Unpaid
+     */
+    public const UNPAID = 'unpaid';
+
+    /**
      * The subscription is paused.
      */
     public const PAUSED = 'paused';
@@ -38,9 +51,12 @@ interface SubscriptionStatusInterface
         self::CANCELED,
         self::DEACTIVATED,
         self::PAUSED,
+        self::PASTDUE,
+        self::UNPAID,
     ];
     public const STATUSES_CHARGEABLE = [
-       self::PENDING,
-       self::ACTIVE,
+        self::PENDING,
+        self::PASTDUE,
+        self::ACTIVE,
     ];
 }
