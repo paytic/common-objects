@@ -36,6 +36,14 @@ trait Chargeable
         return $this->getChargeAttempts() >= $this->getChargedAttemptLimit();
     }
 
+    /**
+     * @param mixed $charge_attempts
+     */
+    public function setChargeAttempts(string|int $charge_attempts): void
+    {
+        $this->charge_attempts = intval($charge_attempts);
+    }
+
     public function getChargeAttempts(): int
     {
         return $this->charge_attempts;
